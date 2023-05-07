@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import {AddButton} from './components/'
+import {AddButton,ButtonCard} from './components/'
 import {getButtons} from './services'
 
 function App() {
@@ -16,15 +16,11 @@ function App() {
   return (
     <main className='conteiner'>
       <h1>Frontend Challenge - Total Coin</h1>
-      <div className='d-flex flex-column gap-2'>
+      <div>
         {
-          buttonList.map((btn) =>(
-            <button 
-            key={btn.id}
-            className='btn btn-primary'>
-              count is {btn.count}
-            </button>
-          ))
+          buttonList?.length === 0 || buttonList === undefined
+          ? <h3 className='mt-5  text-center'> Cargando botones... </h3>
+          : buttonList?.map((btn) => (<ButtonCard key={btn.id} {...btn} />))
         }
       </div>
       <AddButton setRefetch={setRefetch} />
