@@ -6,6 +6,7 @@ const ButtonCard = ({id,count}) => {
     editButton(id,count)
     window.location.reload()
   }
+  
   return (
     <div className="d-flex flex-row align-content-center justify-content-center">
       <button 
