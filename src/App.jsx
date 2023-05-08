@@ -15,12 +15,12 @@ function App() {
 
   return (
     <main className='conteiner'>
-      <h1>Frontend Challenge - Total Coin</h1>
+      <h1 className='text-center my-5'>Frontend Challenge - Total Coin</h1>
       <div>
         {
           buttonList?.length === 0 || buttonList === undefined
           ? <h3 className='mt-5  text-center'> Cargando botones... </h3>
-          : buttonList?.map((btn) => (<ButtonCard key={btn.id} {...btn} />))
+          : buttonList?.map((btn,index) => (<ButtonCard key={btn.id} setRefetch={setRefetch} number={index+1} {...btn} />))
         }
       </div>
       <AddButton setRefetch={setRefetch} />

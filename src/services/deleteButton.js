@@ -1,5 +1,4 @@
-const  deleteButtons= async () => {
-  const id = localStorage.getItem('id')
+const  deleteButtons= async (id) => {
   const response = await fetch(`http://localhost:8000/${id}`, {
     method: 'DELETE'
   })

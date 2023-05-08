@@ -1,9 +1,13 @@
 import { createButtons } from "../../services"
 
 const AddButton = ({setRefetch}) => {
-  const handleClick = () => {
-    createButtons()
-    setRefetch(prev => !prev)
+  const handleClick = async() => {
+    try {
+      await createButtons()
+      setRefetch(prev => !prev)
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   return (

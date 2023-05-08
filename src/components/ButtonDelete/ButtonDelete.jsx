@@ -1,10 +1,13 @@
 import { deleteButton } from "../../services";
 
-const ButtonDelete = ({id}) => {
-  const handleClick = () => {
-    localStorage.setItem('id', id);
-    deleteButton()
-    window.location.reload();
+const ButtonDelete = ({id,setRefetch}) => {
+  const handleClick = async () => {
+    try {
+      await deleteButton(id)
+      setRefetch(prev =>!prev)
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   return (
