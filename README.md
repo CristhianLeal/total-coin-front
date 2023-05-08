@@ -43,6 +43,9 @@ git clone https://github.com/CristhianLeal/total-coin-front.git
 ```
 npm install 
 ```
+### Aclaraciones
+
+* Para el correcto funcionamiento del proyecto es necesario el Frontend y el Backend.
 
 ### Scripts Disponibles
 
